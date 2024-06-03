@@ -40,9 +40,7 @@ h2{
     background: linear-gradient(to top right, rgba(179, 37, 108, 0.5), rgba(255, 182, 193, 0.5));
     z-index: 2;
 }
-.page-container{
-    
-}
+
 .header{
     padding: 20px 40px;
     height: 10%;
