@@ -13,6 +13,34 @@
     rel="stylesheet"/>
     <!--Script-->
     <script>
+                document.addEventListener('DOMContentLoaded', () => {
+    const seats = document.querySelectorAll('.seat');
+
+    seats.forEach(seat => {
+        seat.addEventListener('click', () => {
+            if (!seat.classList.contains('booked')) {
+                seat.classList.toggle('selected');
+            }
+        });
+    });
+
+    function updateSeats() {
+        // Fetch updated seat data from the server and update the DOM accordingly
+        // Example:
+        // fetch('/api/seat-status')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         data.forEach(seat => {
+        //             const seatElement = document.getElementById(`seat-${seat.id}`);
+        //             seatElement.classList.remove('available', 'booked', 'selected');
+        //             seatElement.classList.add(seat.status);
+        //             seatElement.innerHTML = `${seat.id}<br>${seat.name}`;
+        //         });
+        //     });
+    }
+
+    setInterval(updateSeats, 60000); // Update seats every 60 seconds
+});
         document.addEventListener('DOMContentLoaded',function(){
             let menu_icon = document.querySelector(".header-menu");
             let menu = document.querySelector('.menu');
