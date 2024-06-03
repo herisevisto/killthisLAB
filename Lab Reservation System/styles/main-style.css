@@ -308,8 +308,9 @@ button{
     flex-direction: row;
     padding: 10px 10px;
     margin-bottom: 10px;
+    color:#890C66;
 }
-.sub-box select{
+.sub-field select{
     width: 100%;
     border: 1px solid #5f5a5d;
     border-radius: 3px;
