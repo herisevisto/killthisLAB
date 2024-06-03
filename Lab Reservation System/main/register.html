@@ -1,0 +1,67 @@
+<html>
+<header>
+    <title>Create a New Account</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="styles/main-style.css">
+    <link rel="stylesheet" href="styles/signup-style.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="container">
+                <div class="form-box">
+                    <h2 class="signup-header">Create New Account</h2>
+                    <form id="signup-form">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="ex. Justin">
+                        
+                        <label for="middle-name">Middle Name:</label>
+                        <input type="text" id="middle-name" name="middle-name" placeholder="ex. Nicolai">
+                        
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="ex. Lee">
+                        
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="ex. justin_nicolai_lee@dlsu.edu.ph">
+                        
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="ex. cisco">
+                        
+                        <div><button type="submit">Sign up</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var emailInput = document.getElementById('email');
+            var emailValue = emailInput.value;
+            
+            if (!emailValue.endsWith('@dlsu.edu.ph')) {
+                emailInput.value = '';
+                emailInput.placeholder = 'Email organization invalid.';
+                emailInput.style.borderColor = 'red'; // Optional: to highlight the textbox with a red border
+            } else {
+                emailInput.placeholder = 'Email Address'; // Reset placeholder
+                emailInput.style.borderColor = ''; // Reset border color
+                alert('Form submitted successfully!');
+                // If valid, you can submit the form or handle the successful validation here
+                // For example: this.submit(); to actually submit the form
+            }
+        });
+    </script>
+
+</body>
+</html>
