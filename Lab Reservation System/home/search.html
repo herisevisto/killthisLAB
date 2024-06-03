@@ -1,0 +1,80 @@
+<html>
+<header>
+    <title>Search</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main-style.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            let menu_icon = document.querySelector(".header-menu");
+            let menu = document.querySelector('.menu');
+            let logout_icon = document.querySelector(".header-down");
+            let logout_menu = document.querySelector(".logout-dropdown");
+
+            //shows menu tab
+            menu_icon.onclick =  function(){
+                menu.classList.toggle('show-menu')
+            }
+            //hides menu tab
+            document.addEventListener('click', function(event) {
+                if (!menu.contains(event.target) && !menu_icon.contains(event.target)) {
+                    menu.classList.remove('show-menu');
+                }
+            });
+            //shows logout tab
+            logout_icon.onclick = function(){
+                logout_menu.classList.toggle('show-logout-dropdown');
+            }
+            //hides logout tab
+            document.addEventListener('click', function(event) {
+                if (!logout_menu.contains(event.target) && !logout_icon.contains(event.target)) {
+                    logout_menu.classList.remove('show-logout-dropdown');
+                }
+            });
+        })
+    </script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <span class="header-menu"><i class="ri-menu-line"></i></span>
+                    <span class="header-title">Laboratory Reservation System</span>
+                    <span class="header-down"><i class="ri-arrow-down-s-fill"></i></span>
+                    <span class="header-name">Hello, <a href="myProfile.html">Name</a>!</span>
+                    <span class="header-profile"><img src="../images/user-icon.png" alt=""></span>
+                </div>
+                <div class="logout-dropdown">
+                    <div class="logout-dropdown-content">
+                        <a href="">Logout</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-content">
+                        <h1>Dashboard</h1>
+                        <div class="menu-option"><a href="myProfile.html">My Profile</a></div>
+                        <div class="menu-option"><a href="search.html">Search</a></div>
+                        <div class="menu-option"><a href="space-booking.html">Space Bookings</a></div>
+                        <div class="menu-option"><a href="reviews.html">Reviews</a></div>
+                        <div class="menu-option"><a href="FAQs.html">FAQs</a></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <!--Add Content Here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body></html>
