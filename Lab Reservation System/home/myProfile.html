@@ -1,96 +1,201 @@
-<html>
-<header>
-    <title>Profile Settings</title>
-    <!--CSS-->
-    <link rel="stylesheet" href="../styles/main-style.css">
-    <link rel="stylesheet" href="../styles/myProfile-style.css">
-    <!--Font Styles-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
-    <!--RemixIcon-->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"/>
-    <!--Script-->
-   <script src="../javascript/tab.js"></script>
-</header>
-<body>
-    <div class="page">
-        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
-        <div class="page-overlay">
-            <div class="page-container">
-                <div class="header">
-                    <span class="header-menu"><i class="ri-menu-line"></i></span>
-                    <span class="header-title">Laboratory Reservation System</span>
-                    <span class="header-down"><i class="ri-arrow-down-s-fill"></i></span>
-                    <span class="header-name">Hello, <a href="myProfile.html">Name</a>!</span>
-                    <span class="header-profile"><img src="../images/user-icon.png" alt=""></span>
-                </div>
-                <div class="logout-dropdown">
-                    <div class="logout-dropdown-content">
-                        <a href="">Logout</a>
-                    </div>
-                </div>
-                <div class="menu">
-                    <div class="menu-content">
-                        <h1>Dashboard</h1>
-                        <div class="menu-option"><a href="myProfile.html">My Profile</a></div>
-                        <div class="menu-option"><a href="search.html">Search</a></div>
-                        <div class="menu-option"><a href="space-booking.html">Space Bookings</a></div>
-                        <div class="menu-option"><a href="reviews.html">Reviews</a></div>
-                        <div class="menu-option"><a href="FAQs.html">FAQs</a></div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="content-box">
-                        <div class = "myprofilecontainer">
-                            <div class = "upcomingSched-container">
-                                <h1 class = "h1 upcoming-schedules"> Upcoming Schedules </h1>
-                                <div class = "schedule-reservation">
-                                    <div class = "date-time">
-                                        <h1> June 13 </h1>
-                                        <h2> 11:00 AM - 12:30 PM </h2>
-                                    </div>
-                                </div>
-                                <div class = "schedule-reservation holder2">
-                                    <div class = "date-time">
-                                        <h1> June 20 </h1>
-                                        <h2> 11:00 AM - 12:30 PM </h2>
-                                    </div>
-                                    <div class = "schedule-reservation">
-                                        <h1> CCAPDEV </h1>
-                                    </div>
-                                </div>
-                            </div>
+.myprofilecontainer {
+    position: absolute;
+    top: 100px;
+    left: 280px;
+    backdrop-filter: blur(4px);
+    border-radius: 27px;
+    width: 1050px;
+    height: 650px;
+    background-color: rgba(248, 247, 242, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
 
-                            <div class = "pastReservations-container">
-                                <h1 class = "h1 past-reservations"> Past Reservations </h1>
-                                <div class = "schedule-reservation holder 3">
-                                    <div class = "date-time">
-                                        <h1> May 30 </h1>
-                                        <h2> 4:15 PM - 5:45 PM</h2>
-                                    </div>
-                                </div>
-                            </div>
+.myprofileholder-container {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 27px;
+    width: 471px;
+    height: 600px;
+    mix-blend-mode: normal;
+    background-color: #F8F7F2;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
 
-                            <div class = "myprofileholder-container">
-                                <img class="profilepicture-icon" src="C:\Users\user\Downloads\killthisLAB-main\killthisLAB-main\Lab Reservation System\images\Corpuz, Nicole Ashley L..png" alt="Profile Picture">
-                                <h1 class = "h1"> My Profile </h1>
-                                <h2 class = "h2 profile-name"> Nicole Ashley L. Corpuz </h2>
-                                <h2 class = "h2 student-number">12274380</h2>
-                                <h2 class = "h2 email-address">nicole_corpuz@dlsu.edu.ph</h2>
-                                <h2 class = "h2 enrollments">Enrollments:</h2>
-                                <h3 class = "h3 course-1">Student in CCAPDEV</h3>
-                                <h3 class = "h3 course-2">Student in ITNET01</h3>
-                                <h3 class = "h3 course-3">Student in LBYITN1</h3>
-                                <button class = "edit-button">EDIT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+.profilepicture-icon {
+    position: absolute;
+    top: 46px;
+    left: 110px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #890c66;
+}
+
+.h1, .h2, .h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+}
+
+.h1 {
+    font-size: 25px;
+    font-style: bold;
+    font-weight: 1000;
+    color: #1e1e1e;
+    position: absolute;
+    top: 300px;
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+.h1.upcoming-schedules {
+    top: 15px;
+    left: 32%;
+}
+
+.h1.past-reservations {
+    top: 15px;
+    left: 28%;
+
+}
+
+.h2 {
+    font-size: 18px;
+    color: #1e1e1e;
+}
+
+.h2.profile-name {
+    position: absolute;
+    top: 340px;
+    left: 35px;
+}
+
+.h2.student-number {
+    position: absolute;
+    top: 340px;
+    right: 50px;
+}
+
+.h2.email-address {
+    position: absolute;
+    top: 365px;
+    left: 35px;
+}
+
+.h2.description {
+    position: absolute;
+    top: 390px;
+    left: 35px;
+}
+
+.h3 {
+    font-size: 15px;
+    color: #1e1e1e;
+}
+
+.h3.description {
+    position: absolute;
+    top: 420px;
+    left: 65px;
+}
+
+.edit-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #890c66;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.upcomingSched-container {
+    position: absolute;
+    top: 20px;
+    left: 550px;
+    border-radius: 27px;
+    width: 470px;
+    height: 280px;
+    mix-blend-mode: normal;
+    background-color: #F8F7F2;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.pastReservations-container {
+    position: absolute;
+    top: 340px;
+    left: 550px;
+    border-radius: 27px;
+    width: 470px;
+    height: 280px;
+    mix-blend-mode: normal;
+    background-color: #F8F7F2;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.schedule-reservation{
+    top: 30px;
+    width: 100%;
+    position: relative;
+    border-radius: 9px;
+    background-color: #f3e4e4;
+    height: 100px;
+}
+
+.schedule-reservation.holder2 {
+    top: 50px;
+}
+
+.schedule-reservation h1 {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    text-align: left;
+}
+
+.date-time {
+    width: 100%;
+    position: relative;
+    border-radius: 9px;
+    background-color: #e8cfcf;
+    height: 100px;
+    width: 135px;
+
+}
+
+.date-time h1{ 
+    top:20px;
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    color: #890c66;
+    text-align: center;
+    mix-blend-mode: normal;
+    font-style: normal;
+}
+
+.date-time h2 {
+    top: 20px;
+    position: relative;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #890c66;
+    text-align: center;
+    display: inline-block;
+    font-style: normal;
+}
