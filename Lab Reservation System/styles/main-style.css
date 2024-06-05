@@ -197,16 +197,18 @@ button{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80%;
+    height: 90%;
+    overflow: hidden;
 }
 .content-box{
-    max-width: 250vh;
-    max-height: 200vh;
     justify-content: center;
     align-items: center;
     text-align: center;
     display: grid;
     place-items: center;
+    height: 100%;
+    width: 90%;
+    position: relative;
 }
 .start{
     color: #890C66;
@@ -317,6 +319,7 @@ button{
 }
 .sub-box select{
     width: 100%;
+    height: 100%;
     border: 1px solid #5f5a5d;
     border-radius: 3px;
     color: #5f5a5d;
@@ -325,8 +328,123 @@ button{
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 5px 5px;
 }
 .sub-field p{
     text-align: left;
+}
+/*Responsive*/
+/*FULL HD - Large Desktop*/
+@media (min-width:1440px) and (max-width:1920px) {
+    .header{
+        font-size: 35px;
+    }
+    .header-profile{
+        width: 50px;
+        height: 50px;
+    }
+    .header-menu{
+        font-size: 35px;
+    }
+    .header-down{
+        font-size: 35px;
+    }
+    .logout-dropdown-content{
+        height: 50px;
+        width: 150px;
+    }
+    .logout-dropdown-content a{
+        font-size: 25px;
+    }
+    .menu-content{
+        width: 350px;
+        height: 100%;
+    }
+    .menu-content h1{
+        font-size: 35px;
+    }
+    .menu-option{
+        height: 75px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .menu-option a{
+        font-size: 25px;
+    }
+}
+/*HD - Standard Desktop*/
+@media (max-width:1200px) {
+    .header{
+        font-size: 20px;
+    }
+    .header-profile{
+        width: 25px;
+        height: 25px;
+    }
+    .header-menu{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 980px){
+    .header{
+        font-size: 15px;
+    }
+    .header-profile{
+        width: 20px;
+        height: 20px;
+    }
+    .header-menu{
+        font-size: 15px;
+    }
+    .header-down{
+        font-size: 15px;
+    }
+    .logout-dropdown-content{
+        height: 30px;
+        width: 60px;
+    }
+    .logout-dropdown-content a{
+        font-size: 14px;
+    }
+    .menu-content{
+        width: 150px;
+        height: 100%;
+    }
+    .menu-content h1{
+        font-size: 15px;
+    }
+    .menu-option{
+        height: 45px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .menu-option a{
+        font-size: 15px;
+    }   
+}
+
+@media (max-width: 500px){
+    .header{
+        font-size: 14px;
+    }
+    .header-title{
+        display: none;
+    }
+    .header-profile{
+        width: 20px;
+        height: 20px;
+    }
+    .header-menu{
+        font-size: 15px;
+    }
+    .header-down{
+        font-size: 15px;
+    }
+    .logout-dropdown-content{
+        height: 30px;
+        width: 60px;
+    }
+    .logout-dropdown-content a{
+        font-size: 14px;
+    } 
 }
