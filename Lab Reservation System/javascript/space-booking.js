@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 const label = document.createElement('label');
                 label.htmlFor = `seat-${seatNumber}`;
+
+                const seatStatus = document.createElement('div');
+                seatStatus.className = 'seat-status';
+                seatStatus.textContent = 'Available'; // to configure with corresponding status
+                label.appendChild(seatStatus);
                 
                 const seatNoDiv = document.createElement('div');
                 seatNoDiv.className = 'seat-no';
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 nameDiv.className = 'seat-name';
                 const link = document.createElement('a');
                 link.href = ``; // to configure, will link user's profile
-                link.textContent = 'Name';
+                link.textContent = 'Name'; // to configure with user's name or anonymous
                 nameDiv.appendChild(link);
                 label.appendChild(nameDiv);
                 
