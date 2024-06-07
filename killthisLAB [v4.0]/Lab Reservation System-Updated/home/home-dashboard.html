@@ -1,0 +1,100 @@
+<html>
+<header>
+    <title>Home: Hello, Lab, Again!</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main-style.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="../javascript/tab.js"></script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <span class="header-menu"><i class="ri-menu-line"></i></span>
+                    <span class="header-title">Laboratory Reservation System</span>
+                    <span class="header-down"><i class="ri-arrow-down-s-fill"></i></span>
+                    <span class="header-name">Hello, <a href="myProfile.html">Name</a>!</span>
+                    <span class="header-profile"><img src="../images/user-icon.png" alt=""></span>
+                </div>
+                <div class="logout-dropdown">
+                    <div class="logout-dropdown-content">
+                        <a href="../main/login-student.html">Logout</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-content">
+                        <h1>Dashboard</h1>
+                        <div class="menu-option"><a href="myProfile.html">My Profile</a></div>
+                        <div class="menu-option"><a href="search.html">Search</a></div>
+                        <div class="menu-option"><a href="space-booking.html">Space Bookings</a></div>
+                        <div class="menu-option"><a href="reviews.html">Reviews</a></div>
+                        <div class="menu-option"><a href="FAQs.html">FAQs</a></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class="main-box">
+                            <div class="main-box-text">
+                                <h2>Gusto mo katabi si crush? Reserve your seat now!</h2>
+                                <h1>hello, LAB, Again!</h1>
+                                <p>This is your go-to Laboratory Reservation System designed to make securing your favorite study spot easier and more fun than ever! Whether you want to sit next to your crush or simply find the perfect place to focus, our platform allows you to view real-time seat availability, make reservations, and manage your bookings with ease.</p>
+                                <br><p>Say goodbye to seat-hunting stress and hello to a smarter way to study.</p>
+                            </div>
+                            <div class="main-box-img-container">
+                                <div class="main-box-images">
+                                    <div class="top-image">
+                                        <img src="../images/lab.jpg" alt=""></div>
+                                    </div>
+                                <div class="main-box-images">
+                                    <div class="bot-image">
+                                        <img src="../images/lab.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-box">
+                            <div class="sub-box-content">
+                                <div class="field">
+                                    <div class="sub-field">
+                                        <p>Location</p>           
+                                        <select name="loc" id="loc">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="sub-field loc">
+                                        <p>Date</p>
+                                        <select name="date" id="date"></select>
+                                    </div>
+                                    <div class="sub-field time">
+                                        <p>Time</p>
+                                        <select name="time" id="time"></select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="sub-field">
+                                        <p>Seats Availability</p>
+                                        <select name="Seats" id="Seats">
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <form action = "../home/search.html"><button>Search</button></form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body></html>
