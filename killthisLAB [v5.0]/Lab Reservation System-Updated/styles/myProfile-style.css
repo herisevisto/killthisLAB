@@ -1,0 +1,199 @@
+.myprofilecontainer {
+    position: flex;
+    top: 100px;
+    backdrop-filter: blur(4px);
+    border-radius: 27px;
+    width: 1050px;
+    height: 650px;
+    background-color: rgba(248, 247, 242, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.myprofileholder-container {
+    position: flex;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 27px;
+    width: 471px;
+    height: 600px;
+    mix-blend-mode: normal;
+    background-color: #F8F7F2;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.profilepicture-icon {
+    position: flex;
+    top: 46px;
+    left: 110px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #890c66;
+}
+
+.h1, .h2, .h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+}
+
+.h1 {
+    font-size: 25px;
+    font-style: bold;
+    font-weight: 1000;
+    color: #1e1e1e;
+    position: absolute;
+    top: 300px;
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+.h1.upcoming-schedules {
+    top: 15px;
+    left: 32%;
+}
+
+.h1.past-reservations {
+    top: 15px;
+    left: 28%;
+
+}
+
+.h2 {
+    font-size: 18px;
+    color: #1e1e1e;
+}
+
+.h2.profile-name {
+    position: absolute;
+    top: 340px;
+    left: 35px;
+}
+
+.h2.student-number {
+    position: absolute;
+    top: 340px;
+    right: 50px;
+}
+
+.h2.email-address {
+    position: absolute;
+    top: 365px;
+    left: 35px;
+}
+
+.h2.description {
+    position: absolute;
+    top: 390px;
+    left: 35px;
+}
+
+.h3 {
+    font-size: 15px;
+    color: #1e1e1e;
+}
+
+.h3.description {
+    position: absolute;
+    top: 420px;
+    left: 65px;
+}
+
+.edit-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #890c66;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.upcomingSched-container {
+    position: absolute;
+    left: 550px;
+    border-radius: 27px;
+    width: 470px;
+    height: 280px;
+    mix-blend-mode: normal;
+    background-color: #F8F7F2;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.pastReservations-container {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    border-radius: 27px;
+    width: 470px;
+    height: 280px;
+    mix-blend-mode: normal;
+    background-color: #F8F7F2;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.schedule-reservation{
+    top: 30px;
+    width: 100%;
+    position: relative;
+    border-radius: 9px;
+    background-color: #f3e4e4;
+    height: 100px;
+}
+
+.schedule-reservation.holder2 {
+    top: 50px;
+}
+
+.schedule-reservation h1 {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    text-align: left;
+}
+
+.date-time {
+    width: 100%;
+    position: relative;
+    border-radius: 9px;
+    background-color: #e8cfcf;
+    height: 100px;
+    width: 135px;
+
+}
+
+.date-time h1{ 
+    top:20px;
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    color: #890c66;
+    text-align: center;
+    mix-blend-mode: normal;
+    font-style: normal;
+}
+
+.date-time h2 {
+    top: 20px;
+    position: relative;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #890c66;
+    text-align: center;
+    display: inline-block;
+    font-style: normal;
+}
