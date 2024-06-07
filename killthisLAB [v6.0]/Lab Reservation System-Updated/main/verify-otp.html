@@ -1,0 +1,46 @@
+<html>
+<header>
+    <title>FAQs</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main-style.css">
+    <link rel="stylesheet" href="../styles/verify-otp.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="../javascript/tab.js"></script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="content">
+                    <div class="content-box">
+                        <div class ="container-parent">
+                            <div class = "container">
+                                <div class ="verify-otp">Verify OTP</div>
+                                <div class ="verify-otp-description">Please enter the 4 digit code sent to your email.</div>
+                                <div class ="verify-otp-box">
+                                    <input type="text" maxlength="1" class="otp-input" />
+                                    <input type="text" maxlength="1" class="otp-input" />
+                                    <input type="text" maxlength="1" class="otp-input" />
+                                    <input type="text" maxlength="1" class="otp-input" />
+                                </div>                               
+                                <form action = "../main/create-pw.html">
+                                    <button type = "submit" class = "verify-button">VERIFY</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
