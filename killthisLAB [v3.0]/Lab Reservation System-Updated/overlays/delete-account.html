@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Changes Overlay</title>
+    <link rel="stylesheet" href="../styles/delete-account.css">
+</head>
+<body>
+    <div class="ol-delete-account-changes">
+        <div class="container">
+            <b class="h1">Delete account?</b>
+            <div class="h2">Are you sure you want to permanently delete your account? This action cannot be undone.</div>
+            <div class="buttons-container">
+                <div class="delete-button" id="deleteButtonContainer">
+                    <form action="../overlays/delete-acc-confirmation.html">
+                        <button type="submit" class="delete">DELETE</button>
+                    </form>
+                </div>
+                <div class="cancel-button" id="cancelButtonContainer">
+                    <form action="../home/editProfile.html">
+                        <button type="submit" class="cancel-button">CANCEL</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
