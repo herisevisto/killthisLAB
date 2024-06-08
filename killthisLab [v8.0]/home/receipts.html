@@ -1,7 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html> 
 <header>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receipts</title>
+    <title>Guidelines</title>
     <!--CSS-->
     <link rel="stylesheet" href="../styles/main-style.css">
     <link rel="stylesheet" href="../styles/receipt.css">
@@ -10,11 +10,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
     <!--RemixIcon-->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet" />
     <!--Script-->
     <script src="../javascript/tab.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var receiptDetails = document.querySelector('.receipt-details');
+            var date = randomDate(new Date(2022, 0, 1), new Date());
+            var time = randomTime();
+            var location = "Laboratory " + randomIntFromInterval(100, 500);
+            var bookingID = randomIntFromInterval(100000, 999999);
+            var amount = parseFloat((Math.random() * 100).toFixed(2));
+
+            var content = [
+                "Date: " + date,
+                "Time: " + time,
+                "Location: " + location,
+                "Booking ID: " + bookingID,
+                
+            ];
+
+            content.forEach(function (item) {
+                var p = document.createElement('p');
+                p.textContent = item;
+                receiptDetails.appendChild(p);
+            });
+
+            function randomDate(start, end) {
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toDateString();
+            }
+
+            function randomTime() {
+                var hours = Math.floor(Math.random() * 12) + 1;
+                var minutes = Math.floor(Math.random() * 60);
+                var ampm = Math.random() < 0.5 ? "AM" : "PM";
+                return hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
+            }
+
+            function randomIntFromInterval(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+        });
+    </script>
 </header>
 <body>
     <div class="page">
@@ -49,6 +87,8 @@
                             <div class="receipt-container">
                                 <div class="header-container">
                                     <div class="header-text">Booking Receipt</div>
+                                </div>
+                                <div class="receipt-details">
                                 </div>
                                 <div class="buttons-container">
                                     <div class="view-profile-button" id="viewProfileButtonContainer">
