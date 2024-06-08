@@ -80,3 +80,45 @@ body {
     width: 447px;
     font-size: 20px;
 }
+
+@media (max-width: 1440px) {
+    .form-box{
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 1336px) {
+    .form-box{
+        padding: 20px 30px;
+    }
+    .forgot-pw-description{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .form-box {
+        padding: 15px 20px;
+    }
+    .forgot-pw-description padding {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .form-box{
+        padding: 15px 20px;
+    }
+    .forgot-pw-description{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-box {
+        padding: 10px 15px;
+    }
+    .forgot-pw-description {
+        font-size: 12px;
+    }
+}
