@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+<header>
+    <title>FAQs</title>
     <!--CSS-->
     <link rel="stylesheet" href="../styles/main-style.css">
     <link rel="stylesheet" href="../styles/editProfile.css">
@@ -11,11 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
     <!--RemixIcon-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-        rel="stylesheet" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
     <!--Script-->
     <script src="../javascript/tab.js"></script>
-</head>
+</header>
 <body>
     <div class="page">
         <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
@@ -45,59 +44,77 @@
                 </div>
                 <div class="content">
                     <div class="content-box">
-                        <div class="container1">
-                            <div class="container2">
+                        <div class = "container1">
+                            <div class = "container2">
                                 <div class="container-header">
-                                    <h1>My Profile</h1>
+                                    <h1 style="padding-right: 60px;">My Profile</h1>
+
                                 </div>
                                 <div class="container-body">
                                     <div class="profile-box">
-                                        <img class="profilepicture-icon" src="../images/Corpuz, Nicole Ashley L..png"
-                                            alt="Profile Picture">
-                                        <a href="../overlays/save-photo.html" class="change">Change Photo</a>
-                                        <a href="../overlays/delete-photo.html" class="delete">Delete Photo</a>
+                                    <img class="profilepicture-icon" src="../images/Corpuz, Nicole Ashley L..png" alt="Profile Picture">
+                                    <a href="../overlays/save-photo.html" class="change">Change Photo</a>
+                                    <a href="../overlays/delete-photo.html" class="delete">Delete Photo</a>
                                     </div>
                                     <div class="profile-details">
                                         <div class="profile-field">
                                             <span class="input-label">Full Name:</span>
-                                            <input type="text" name="fullname" id="fullname">
+                                            <input type="text" name="fullname" id="fullname" style="margin-left: 60px;">
+
                                         </div>
                                         <div class="profile-field">
                                             <span class="input-label">Display Name:</span>
-                                            <input type="text" name="displayname" id="displayname">
+                                            <input type="text" name="displayname" id="displayname" style="margin-left: 30px;">
                                         </div>
                                         <div class="profile-field">
                                             <span class="input-label">Pronouns:</span>
-                                            <input type="text" name="pronouns" id="pronouns">
+                                            <input type="text" name="pronouns" id="pronouns" style="margin-left: 62px;">
                                         </div>
                                         <div class="profile-field">
                                             <span class="input-label">ID Number:</span>
-                                            <input type="text" name="idnumber" id="idnumber">
+                                            <input type="text" name="idnumber" id="idnumber" style="margin-left: 55px;">
                                         </div>
                                         <div class="profile-field">
                                             <span class="input-label">Email:</span>
-                                            <input type="text" name="email" id="email">
+                                            <input type="text" name="email" id="email" style="margin-left: 95px;">
                                         </div>
                                         <div class="description">
-                                            <h1>Description</h1>
-                                            <p>Ganda lang :))</p>
-                                            <a href="../overlays/pwchanged.html" class="change">Change Password</a>
-                                            <a href="../overlays/delete-account.html" class="delete">Delete Account</a>
+                                            <h1 style="margin-top: 10px;">Current Enrollments:</h1>
+
+                                            <ul>
+                                                <li style="font-weight: normal; color: grey; margin-left: 60px; margin-top: 5px;">Student in CCAPDEV</li>
+                                                <li style="font-weight: normal; color: grey; margin-left: 60px;">Student in ITNET01</li>
+                                                <li style="font-weight: normal; color: grey; margin-left: 60px; margin-bottom: 15px;">Student in LBYITN1</li>
+                                            </ul>
+                                            
+                                            
+                                            <a href="../overlays/pwchanged.html" class="change" style="color: black;">Change Password <span style="margin-left: 315px; color: grey;">&gt;</span></a>
+                                            <a href="../overlays/delete-account.html" class="delete" style="color: black;">Delete Account <span style="margin-left: 335px; color: grey;">&gt;</span></a>
+
+                                            
+                                            
+                                            
+
                                         </div>
+                                        
+                                        
                                         <div class="profile-buttons">
-                                            <form action="../overlays/save-profile.html"><button
-                                                    class="save-profile">Save</button></form>
-                                            <form action="../overlays/unsavedchanges.html"><button
-                                                    class="cancel-profile">Cancel</button></form>
+                                            <button class="save-profile" style="background-color: violet; color: white;">Save</button>
+                                            <form action="../overlays/unsavedchanges.html">
+                                                <button class="cancel-profile" style="background-color: white; color: red;">Cancel</button>
+                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>
+                                
+                                    
                             </div>
                         </div>
-                    </div>
+                        </div>
+                   </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+</body></html>
