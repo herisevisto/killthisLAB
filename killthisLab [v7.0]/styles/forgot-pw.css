@@ -98,3 +98,64 @@
     color: #000;
     font-family: 'Red Hat Text';
 }
+
+@media screen and (max-width: 1366px) {
+    .container {
+        width: 90%; 
+        height: auto;
+    }
+
+    .email-address {
+        width: 90%; 
+    }
+
+    .forgot-password {
+        font-size: 24px;
+    }
+
+    .forgot-pw-description {
+        font-size: 18px; 
+    }
+
+    .submit-button {
+        width: 80%; 
+    }
+
+    .back-to-login-button {
+        width: 60%; 
+        left: calc(50% - 60px);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    
+}
+
+
+@media screen and (max-width: 1280px) {
+    .container {
+        width: 90%; 
+        height: auto;
+    }
+
+    .email-address {
+        width: 90%; 
+    }
+
+    .forgot-password {
+        font-size: 22px; 
+    }
+
+    .forgot-pw-description {
+        font-size: 16px; 
+    }
+
+    .submit-button {
+        width: 80%; 
+    }
+
+    .back-to-login-button {
+        width: 60%; 
+        left: calc(50% - 60px); 
+    }
+}
