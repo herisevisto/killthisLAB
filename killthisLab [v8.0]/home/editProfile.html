@@ -1,0 +1,103 @@
+<html>
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main-style.css">
+    <link rel="stylesheet" href="../styles/editProfile.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="../javascript/tab.js"></script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <span class="header-menu"><i class="ri-menu-line"></i></span>
+                    <span class="header-title">Laboratory Reservation System</span>
+                    <span class="header-down"><i class="ri-arrow-down-s-fill"></i></span>
+                    <span class="header-name">Hello, <a href="myProfile.html">Name</a>!</span>
+                    <span class="header-profile"><img src="../images/user-icon.png" alt=""></span>
+                </div>
+                <div class="logout-dropdown">
+                    <div class="logout-dropdown-content">
+                        <a href="../main/login-student.html">Logout</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-content">
+                        <h1>Dashboard</h1>
+                        <div class="menu-option"><a href="myProfile.html">My Profile</a></div>
+                        <div class="menu-option"><a href="search.html">Search</a></div>
+                        <div class="menu-option"><a href="space-booking.html">Space Bookings</a></div>
+                        <div class="menu-option"><a href="receipts.html">Receipts</a></div>
+                        <div class="menu-option"><a href="FAQs.html">FAQs</a></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class = "container1">
+                            <div class = "container2">
+                                <div class="container-header">
+                                    <h1>My Profile</h1>
+                                </div>
+                                <div class="container-body">
+                                    <div class="profile-box">
+                                    <img class="profilepicture-icon" src="../images/Corpuz, Nicole Ashley L..png" alt="Profile Picture">
+                                    <a href="../overlays/save-photo.html" class="change">Change Photo</a>
+                                    <a href="../overlays/delete-photo.html" class="delete">Delete Photo</a>
+                                    </div>
+                                    <div class="profile-details">
+                                        <div class="profile-field">
+                                            <span class="input-label">Full Name:</span>
+                                            <input type="text" name="fullname" id="fullname">
+                                        </div>
+                                        <div class="profile-field">
+                                            <span class="input-label">Display Name:</span>
+                                            <input type="text" name="displayname" id="displayname">
+                                        </div>
+                                        <div class="profile-field">
+                                            <span class="input-label">Pronouns:</span>
+                                            <input type="text" name="pronouns" id="pronouns">
+                                        </div>
+                                        <div class="profile-field">
+                                            <span class="input-label">ID Number:</span>
+                                            <input type="text" name="idnumber" id="idnumber">
+                                        </div>
+                                        <div class="profile-field">
+                                            <span class="input-label">Email:</span>
+                                            <input type="text" name="email" id="email">
+                                        </div>
+                                        <div class="description">
+                                            <h1>Description</h1>
+                                            <p>Ganda lang :))</p>
+                                            <a href="../overlays/pwchanged.html" class="change">Change Password</a>
+                                            <a href="../overlays/delete-account.html" class="delete">Delete Account</a>
+                                        </div>
+                                        
+                                        <div class="profile-buttons">
+                                            <form action="../overlays/save-profile.html"><button class="save-profile">Save</button></form>
+                                            <form action="../overlays/unsavedchanges.html"><button class="cancel-profile">Cancel</button></form>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                    
+                            </div>
+                        </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body></html>
