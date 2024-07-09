@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html> 
+<header>
+    <title>Guidelines</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main-style.css">
+    <link rel="stylesheet" href="../styles/receipt.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet" />
+    <!--Script-->
+    <script src="/script/tab"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var receiptDetails = document.querySelector('.receipt-details');
+            var date = randomDate(new Date(2022, 0, 1), new Date());
+            var time = randomTime();
+            var location = "Laboratory " + randomIntFromInterval(100, 500);
+            var bookingID = randomIntFromInterval(100000, 999999);
+            var amount = parseFloat((Math.random() * 100).toFixed(2));
+
+            var content = [
+                "Date: " + date,
+                "Time: " + time,
+                "Location: " + location,
+                "Booking ID: " + bookingID,
+                
+            ];
+
+            content.forEach(function (item) {
+                var p = document.createElement('p');
+                p.textContent = item;
+                receiptDetails.appendChild(p);
+            });
+
+            function randomDate(start, end) {
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toDateString();
+            }
+
+            function randomTime() {
+                var hours = Math.floor(Math.random() * 12) + 1;
+                var minutes = Math.floor(Math.random() * 60);
+                var ampm = Math.random() < 0.5 ? "AM" : "PM";
+                return hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
+            }
+
+            function randomIntFromInterval(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+        });
+    </script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <span class="header-menu"><i class="ri-menu-line"></i></span>
+                    <span class="header-title">Laboratory Reservation System</span>
+                    <span class="header-down"><i class="ri-arrow-down-s-fill"></i></span>
+                    <span class="header-name">Hello, <a href="/home/myProfile">Name</a>!</span>
+                    <span class="header-profile"><img src="../images/user-icon.png" alt=""></span>
+                </div>
+                <div class="logout-dropdown">
+                    <div class="logout-dropdown-content">
+                        <a href="/admin/login-student">Logout</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-content">
+                        <h1>Dashboard</h1>
+                        <div class="menu-option"><a href="/home/myProfile">My Profile</a></div>
+                        <div class="menu-option"><a href="/home/search">Search</a></div>
+                        <div class="menu-option"><a href="/home/space-booking">Space Bookings</a></div>
+                        <div class="menu-option"><a href="/home/receipts">Receipts</a></div>
+                        <div class="menu-option"><a href="/home/FAQs">FAQs</a></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class="container">
+                            <div class="receipt-container">
+                                <div class="header-container">
+                                    <div class="header-text">Booking Receipt</div>
+                                </div>
+                                <div class="receipt-details">
+                                </div>
+                                <div class="buttons-container">
+                                    <div class="view-profile-button" id="viewProfileButtonContainer">
+                                        <form action="/home/myProfile">
+                                            <button type="submit" class="view-profile-button">View Profile</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
