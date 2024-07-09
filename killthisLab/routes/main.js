@@ -26,10 +26,8 @@ app.get('/verify-otp', (req, res) => {
     res.sendFile(path.join(__dirname, './../view/main/verify-otp.html'));
 });
 
-module.exports = app;
-
 // Login Route
-router.post('/login-labtech', async (req, res) => {
+app.post('/login-labtech', async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email });
@@ -43,4 +41,4 @@ router.post('/login-labtech', async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = app;
