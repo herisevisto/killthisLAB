@@ -1,6 +1,7 @@
 const express = require("express"); 
 const app = express.Router();
 const path = require('path');
+const User = require('../model/login-labtech');
 
 // main folder
 app.get('/home-main', (req, res) => {
@@ -26,3 +27,20 @@ app.get('/verify-otp', (req, res) => {
 });
 
 module.exports = app;
+
+// Login Route
+router.post('/login-labtech', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (user && user.password === password) {
+            res.redirect('/home/home-dashboard.html');
+        } else {
+            res.status(401).send('Invalid login credentials');
+        }
+    } catch (error) {
+        res.status(500).send('Internal server error');
+    }
+});
+
+module.exports = router;
