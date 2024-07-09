@@ -1,8 +1,11 @@
 var express = require('express'); 
 var app = express();
-
 const path = require('path');
 const PORT = 3000;
+
+// Middleware to parse JSON and urlencoded form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Serve static files
 app.use('/styles', express.static(path.join(__dirname, './public/styles')));
@@ -26,6 +29,7 @@ app.use('/script', scriptRoute);
 
 // Create mongodb connection
 mongoose.connect("mongodb://localhost:27017/killthislab");
+
 const locationModel = require('./model/location')
 app.get('/getLocations', (req,res) => {
     locationModel.find()
