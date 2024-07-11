@@ -1,4 +1,4 @@
-Kill This Lab | Lab Reservation System
+*Kill This Lab | Lab Reservation System*
 
 The repository contains the source code for the lab reservation system web application.
 The application allows users to reserve seats in different laboratories based on availability.
