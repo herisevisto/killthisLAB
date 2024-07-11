@@ -17,6 +17,7 @@ npm install
 - express-fileupload
 - hbs
 - mongoose
+- express-session
 
 Running the application:
 - cd [FILE_LOCATION where index.js is located at your PC]
