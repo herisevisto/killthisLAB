@@ -1,38 +1,14 @@
 # Kill This Lab | Lab Reservation System
+Welcome to our Lab Reservation System project repository! This web application is being developed as part of our Major Course Output for CCAPDEV at De La Salle University.
 
-The repository contains the source code for the lab reservation system web application.
-The application allows users to reserve seats in different laboratories based on availability.
+# Project Overview:
+The Lab Reservation System allows users to reserve seats in computer laboratories across our campus. The system aims to provide a seamless experience for students and lab technicians. As of the moment, our system is available for College of Computer Studies.
 
-# Prerequisites:
-Before running the application, ensure that the following are installed
-- node.js
-- npm
+# What's Inside?
+The project is divided into three phases:
+## Phase 1: Frontend Development
+In Phase 1, we are focusing on developing the frontend components of our Lab Reservation System. 
+## Phase 2: Backend Development
+In Phase 2, this involves developing the backend using Node.js with Express.js and MongoDB with Mongoose for the database.
+## Phase 3
 
-## Getting Started:
-Initialize the project
-- npm init -y
-### Install packages
-npm install 
-- express
-- express-fileupload
-- hbs
-- mongoose
-- bcrypt
-
-## Running the application:
-- cd [FILE_LOCATION where index.js is located at your PC]
-e.g. cd "C:\Users\Downloads\Term 3\APDEV\killthisLab [Phase 1]\view\home"
-- node index.js
-- on web browser type: localhost:3000
-
-
-## MongoDB Configuration
-   - Ensure MongoDB is running locally:
-         mongodb://localhost:27017/killthislab
-
-   - Upload the `.csv` files and `killthislab.locations.json` to the `killthislab/locations` collection.
-
-## Limitations
-- Runs on localhost.
-- User Sign In and Register functionality captures user registration, but it does not immediately reflect in 
-  the database.
