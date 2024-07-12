@@ -21,7 +21,7 @@ npm install
 
 ## Running the application:
 - cd [FILE_LOCATION where index.js is located at your PC]
-e.g. cd "C:\Users\Downloads\Term 3\APDEV\killthisLab [Phase 1]\view\home"
+e.g. cd "C:\Users\ashle\Downloads\killthisLAB-main\killthisLAB-main\version11-killthisLAB"
 - node index.js
 - on web browser type: localhost:3000
 
