@@ -18,6 +18,7 @@ npm install
 - hbs
 - mongoose
 - bcrypt
+- passport
 
 ## Running the application:
 - cd [FILE_LOCATION where index.js is located at your PC]
