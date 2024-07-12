@@ -1,0 +1,400 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-body {
+    background-color: white; /* Changed to white */
+    padding: 30px 20px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    height: 85%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-header {
+    background-color: #890C66;
+    border-radius: 10px;
+    width: 100%;
+    height: 80px;
+    border: 1px solid rgb(73, 71, 73);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 31;
+    top: 0;
+}
+
+.container-header h1 {
+    all: unset;
+    color: white;
+    font-size: 35px !important;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+.legend div {
+    margin: 0 10px;
+}
+
+.legend span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.available {
+    background-color: #e0e0e0;
+}
+
+.booked {
+    background-color: #ff9800;
+}
+
+.selected {
+    background-color: #9c27b0;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px 5px 5px 5px;
+    align-items: center;
+    height: 20%;
+    width: auto;
+    white-space: nowrap;
+    margin-top: 1%;
+}
+
+.field {
+    height: 100%;
+    margin: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.field select, .field input{
+    width: 100%;
+}
+
+.sub-field p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1E1E1E;
+}
+
+.grid {
+    height: 90%;
+}
+
+.all-seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+}
+
+.all-seats::-webkit-scrollbar{
+    display: none;
+}
+
+.seat-row {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+}
+
+.seat {
+    width: 70px;
+    height: 60px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #890C66;
+    cursor: pointer;
+    align-items: center;
+    justify-items: center;
+    margin: 5px; /* Adjust spacing */
+}
+
+.seat-no {
+    font-family: 'Inter', sans-serif;
+    color: #890C66;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.seat-name,
+.seat-status {
+    font-family: 'Poppins', sans-serif;
+    color: #890C66;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.seat input[type="checkbox"] {
+    display: none;
+}
+
+.seat.booked {
+    background-color: #f1d782;
+    cursor: not-allowed;
+}
+
+.seat.available {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: #b35fc2;
+    color: white;
+}
+
+.seat a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.seat a:hover {
+    text-decoration: underline;
+}
+
+.reserve-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #890C66;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.reserve-button:hover {
+    background-color: #7b1fa2;
+}
+
+.classrooms {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(150px, auto);
+    gap: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.aquarium {
+    width: 215px;
+    height: 155px;
+    border: 1px solid #890C66;
+    border-radius: 20px;
+    background-color: #FFFBE2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.aquarium-bg {
+    width: 90%;
+    height: 70%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.aquarium-bg img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+.aquarium-bg-overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.aquarium-bg-overlay h1,
+.aquarium-bg-overlay p {
+    all: unset;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aquarium-bg-overlay h1 {
+    font-size: 14px;
+}
+
+.aquarium-bg-overlay p {
+    font-size: 10px;
+}
+
+.aquarium-bg-overlay button {
+    color: white;
+    background-color: #890C66;
+    width: 50%;
+    height: 25%;
+}
+
+.aquarium-details {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+}
+
+.aquarium-field {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.aquarium-field h1,
+.aquarium-field p {
+    all: unset;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aquarium-field h1 {
+    font-size: 10px;
+}
+.aquarium-field p {
+    font-size: 8px;
+}
+
+.aquarium-field .available {
+    color: lightgreen;
+}
+
+.aquarium-field .occupied {
+    color: red;
+}
+
+/* Responsive */
+/* Split Screen */
+@media (max-width: 980px) {
+    .classrooms {
+        overflow: scroll;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        place-content: initial;
+    }
+
+    .classrooms::-webkit-scrollbar {
+        display: none;
+    }
+
+    .seat-row {
+        align-items: initial;
+        justify-items: initial;
+        justify-content: initial;
+        align-content: initial;
+    }
+    
+    .legend{
+        font-size: 15px;
+    }
+
+    .legend span{
+        width: 15px;
+        height: 15px;
+    }
+
+    .details select{
+        widows: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .details {
+        margin-top: 100px;
+        height: 5%;
+    }
+
+    .field {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .sub-field p {
+        font-size: 10px;
+    }
+
+    .container-header h1 {
+        font-size: 25px;
+    }
+
+    .seat {
+        width: 60px;
+        height: 50px;
+    }
+}
+
