@@ -1,17 +1,17 @@
-Kill This Lab | Lab Reservation System
+# Kill This Lab | Lab Reservation System
 
 The repository contains the source code for the lab reservation system web application.
 The application allows users to reserve seats in different laboratories based on availability.
 
-Prerequisites:
+# Prerequisites:
 Before running the application, ensure that the following are installed
 - node.js
 - npm
 
-Getting Started:
+## Getting Started:
 Initialize the project
 - npm init -y
-Install packages
+### Install packages
 npm install 
 - express
 - express-fileupload
@@ -19,16 +19,16 @@ npm install
 - mongoose
 - bcrypt
 
-Running the application:
+## Running the application:
 - cd [FILE_LOCATION where index.js is located at your PC]
 e.g. cd "C:\Users\Downloads\Term 3\APDEV\killthisLab [Phase 1]\view\home"
 - node index.js
 - on web browser type: localhost:3000
 
 
- **MongoDB Configuration**
+## MongoDB Configuration
    - Ensure MongoDB is running locally:
-         mongodb://localhost:27017/
+         mongodb://localhost:27017/killthislab
 
    - Upload the `.csv` files and `killthislab.locations.json` to the `killthislab/locations` collection.
 
