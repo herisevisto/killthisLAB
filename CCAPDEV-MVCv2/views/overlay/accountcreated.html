@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Created Overlay</title>
+    <link rel="stylesheet" href="../styles/accountcreated.css">
+    <link rel="stylesheet" href="../styles/main-style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script>
+         $(document).ready(function(){
+            const urlParams = new URLSearchParams(window.location.search);
+            const userID = parseInt(urlParams.get('userID'));
+
+            if(userID){
+                $('input[name="userID"]').val(userID);
+                $('form').attr('action', `/home/home-dashboard?userID=${userID}`);
+            }
+        });          
+    </script>
+</head>
+<body>
+    <div class="ol-accountsaved-changes">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="container">
+                <b class="h1">You are all signed up!</b>
+                <div class="h2">Your account has been created successfully!</div>
+                <div class="buttons-container">
+                    <div class="get-started-button" id="getStartedButtonContainer">
+                        <form action = "">
+                            <input type="hidden" name="userID" value="">
+                            <button type = "submit" class="get-started-button">Get Started!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
