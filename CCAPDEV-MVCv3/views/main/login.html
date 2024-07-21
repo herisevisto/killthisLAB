@@ -1,0 +1,71 @@
+<html>
+  <header>
+    <title>Sign In: LabTech</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main-style.css" />
+    <link rel="stylesheet" href="../styles/login-style.css" />
+    <!--Font Styles-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Red Hat Text"
+      rel="stylesheet"
+    />
+    <!--RemixIcon-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </header>
+  <body>
+    <div class="page">
+      <img
+        class="page-background"
+        src="../images/lab.jpg"
+        alt="Lab Background"
+      />
+      <div class="page-overlay">
+        <div class="page-container">
+          <div class="login-content-box">
+            <div class="login-buttons">
+              <form action="/main/login"><button class="active student">Student</button></form>
+              <form action="/main/login-labtech"><button class="passive labtech">LabTech</button></form>
+            </div>
+            <div class="login-box">
+              <form id="login-form" class="login-box-top">
+                <h1>Login</h1>
+                <p>Email:</p>
+                <input type="email" name="email" id="email" required />
+                <p>Password:</p>
+                <input type="text" name="password" id="password" required />
+                <input
+                  type="text"
+                  style="display: none"
+                  id="role"
+                  value="Student"
+                />
+                <p class="forgot-password">
+                  <a href="/main/forgot-pw">Forgot Password?</a>
+                </p>
+                <button type="submit">LOGIN</button>
+              </form>
+              <div class="login-box-bot">
+                <p>New here? Sign up now!</p>
+                <form action = "/main/sign-up">
+                  <button type = "submit" class = "register-button">Register Now!</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/login.js"></script>
+  </body>
+</html>
