@@ -1,0 +1,119 @@
+<html>
+    <header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Reservations</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/admin.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="/script/assignLocation"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <p><h1>Hello LAB Again!</h1></p>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class="main-box">
+                            <div class="resField">
+                                <p class="search-res">
+                                    User ID:
+                                    <span><input type="text" id="userID" placeholder="Enter User ID"> <button id="searchButton">Search</button></span>
+                                </p>
+                            </div>
+                            <div class="reservationDeets">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Receipt ID</th>
+                                            <th>Class Name</th>
+                                            <th>Section</th>
+                                            <th>Seat IDs</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reservationBody">
+                                        <!-- Will be populated -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="logout">
+                                <button onclick="window.location.href='/admin/dashboard'">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('#searchButton').click(function(){
+            const userID = $('#userID').val();
+            if(userID){
+                $.ajax({
+                    url: `/admin/getReservationsByID/${userID}`, 
+                    method: 'GET',
+                    success: function(data) {
+                        let resDeets = '';
+                        data.reservations.forEach(reservation => {
+                            resDeets += 
+                            `<tr>
+                                <td> ${reservation.receiptID}</td>
+                                <td> ${reservation.className}</td>
+                                <td> ${reservation.section}</td>
+                                <td> ${reservation.seatIDs.join(', ')}</td>
+                                <td id="actions">
+                                    <button onclick="editReservation(${reservation.receiptID})">Edit</button>
+                                    <button onclick="deleteReservation(${reservation.receiptID})">Cancel</button>
+                                </td>
+                            </tr>`;
+                        })
+                        $('#reservationBody').html(resDeets);
+                    },
+                    error: function() {
+                        alert('User not found or an error occurred');
+                    }
+                });
+            }
+            else{
+                alert('Please enter a valid User ID.');
+                return;
+            }
+        })
+
+        window.deleteReservation = function(receiptID){
+            $.ajax({
+                url: `/admin/deleteReservation/${receiptID}`,
+                method: 'DELETE',
+                success: function(data) {
+                    //alert(`ReservationID: ${receiptID}`)
+                    alert(data.message);
+                    $('#searchButton').click(); // Refresh the reservation list
+                },
+                error: function() {
+                    alert(`Failed to delete reservation ${receiptID}`);
+                }
+            });
+        }
+
+        window.editReservation = function(receiptID){
+            window.location.href = `/admin/userReservation?resID=${receiptID}`
+        }
+
+    })
+</script>
+</html>

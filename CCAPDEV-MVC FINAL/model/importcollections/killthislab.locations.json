@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "668cee8385cb69f9164eeca0"
+  },
+  "locationID": 10001,
+  "bldg": "Andrew",
+  "floors": 20
+},
+{
+  "_id": {
+    "$oid": "668cee8385cb69f9164eeca1"
+  },
+  "locationID": 10002,
+  "bldg": "Velasco",
+  "floors": "5"
+},
+{
+  "_id": {
+    "$oid": "668cee8385cb69f9164eeca2"
+  },
+  "locationID": 10003,
+  "bldg": "Gokongwei",
+  "floors": 4
+},
+{
+  "_id": {
+    "$oid": "668cee8385cb69f9164eeca4"
+  },
+  "locationID": 10004,
+  "bldg": "Yuchengco",
+  "floors": 7
+}]

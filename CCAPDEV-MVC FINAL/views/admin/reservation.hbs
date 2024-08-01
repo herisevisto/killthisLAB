@@ -1,0 +1,208 @@
+<html>
+    <header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Reservations</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/admin.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <p><h1>Hello LAB Again!</h1></p>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class="main-box">
+                            <div class="resField">
+                                User ID: <span>{{reservation.userID}}</span>
+                                Reservation ID: <span>{{reservation.receiptID}}</span>
+                                Class: <span>{{reservation.className}}</span>
+                                Section: <span>{{reservation.section}}</span>
+                                Seats: {{#each reservation.seatIDs}}<span>{{this}} </span> {{/each}}
+                            </div>
+                            <div class="editField">
+                                <div id="addSeatsDeets">
+                                    <button id="addSeats" onclick="addSeat()">Add Seats</button>
+                                    <p>No of Seats: 
+                                        <span><input type="number" name="addSeatNo" id="addSeatNo" placeholder="Max of 5"> <button class="add" id="add">Add</button></span>
+                                    </p>
+                                    <p class="chooseSeat">
+                                        Choose Seat 
+                                        <select name="addDropdown" id="addDropdown">
+                                            <!-- Populate the dropdown with seats -->
+                                        </select>
+                                        <button class="enter">Enter</button>
+                                    </p>
+                                    <!-- Populate with seats -->
+                                    <p class="seatAdded">
+                                        Seat: <!-- addDropdown option value -->
+                                    </p>
+                                </div>
+                                <div id="changeSeatsDeets">
+                                    <button id="changeSeats" onclick="changeSeat()">Change Seats</button>
+                                    <p>Choose Seat for:</p>
+                                    {{#each reservation.seatIDs}}
+                                    <p>{{this}}
+                                        <select class="changeDropdown" name="seats[]">
+                                            <!-- Populate the dropdown with seats -->
+                                        </select>
+                                    </p>
+                                    {{/each}}
+                                    <input type="hidden" name="reservationID" value="{{reservation.receiptID}}">
+                                </div>
+
+                            </div>
+                            <div class="logout">
+                                <button onclick="window.location.href='/admin/editReservations'">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        const seats = {{{seats}}};
+        const addDropdown = $('#addDropdown');
+        const changeDropdowns = $('.changeDropdown');
+        const addButton = $('#add');
+        const chooseSeat = $('.chooseSeat');
+        const seatAdded = $('.seatAdded');
+        const enterButton = $('.enter');
+        
+        $('.add').on('click', function(){
+            var numSeats = parseInt($('#addSeatNo').val());
+                if (isNaN(numSeats) || numSeats <= 0) {
+                alert('Please enter a valid number of seats.');
+                return;
+            }
+            var totalSeats = 0;
+            addButton.hide();
+            chooseSeat.show()
+            addDropdown.each(function(){
+            const dropdown = $(this);
+            dropdown.empty();
+            //default
+            dropdown.append(new Option('row | col', '0'));
+            seats.forEach(seat => {
+                dropdown.append(new Option(`${seat.rowNo} | ${seat.colNo}`, seat.seatID));
+            });
+        })
+
+        $('.enter').on('click', function() {
+            if(totalSeats >= numSeats){
+                alert('You have reached the maximum number of seats.');
+                enterButton.addClass('disabled');
+                return;
+            }
+            const selectedSeatID = addDropdown.val();
+            if(selectedSeatID && selectedSeatID !== '0'){
+                seatAdded.append(`<span>${selectedSeatID}</span> `);
+                addDropdown.find(`option[value="${selectedSeatID}"]`).remove();
+                totalSeats++;
+            } else{
+                alert('Please select a valid seat')
+            }
+        })
+        })
+        
+        changeDropdowns.each(function(){
+            const dropdown = $(this);
+            dropdown.empty();
+            //default
+            dropdown.append(new Option('row | col', '0'));
+            seats.forEach(seat => {
+                dropdown.append(new Option(`${seat.rowNo} | ${seat.colNo}`, seat.seatID));
+            });
+        })
+    })
+
+    function changeSeat(){
+        const selectedSeats = $('.changeDropdown').map(function() {
+            return $(this).val();
+        }).get();
+
+        const reservationID = $('input[name="reservationID"]').val();
+
+        const data = {
+            seats: selectedSeats,
+            reservationID: reservationID
+        };
+
+        const invalidSeats = selectedSeats.some(seat => seat === '0');
+
+        if (invalidSeats) {
+            alert('Please select seat/s');
+        } else {
+            //alert('Seats: ' + selectedSeats.join(', '));
+             $.ajax({
+                url: '/admin/changeSeats',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(response) {
+                    alert(response.message);
+                },
+                error: function() {
+                    alert(`Failed to delete reservation` + selectedSeats.join(', '));
+                }
+            });
+        }
+    }
+
+    function addSeat(){
+        const seatIDs = [];
+        $('.seatAdded span').each(function() {
+            // Extract the text content from the <span>
+            const text = $(this).text().trim();
+            
+            // Split the text by spaces and add each part to the array
+            text.split(/\s+/).forEach(id => {
+                if (id) {
+                    seatIDs.push(id);
+                }
+            });
+        });
+
+        const reservationID = $('input[name="reservationID"]').val();
+        if (seatIDs.length === 0) {
+            alert('Add seat first');
+        } else{
+            const data = {
+                seats: seatIDs,
+                reservationID: reservationID
+            };
+            
+            $.ajax({
+                url: '/admin/addSeats',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(response) {
+                    alert(response.message);
+                    $('.seatAdded').empty();
+                },
+                error: function() {
+                    alert(`Failed to add reservation`);
+                }
+            });
+        }
+        
+    }
+</script>
+</html>
