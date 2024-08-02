@@ -10,5 +10,11 @@ The project is divided into three phases:
 In Phase 1, we are focusing on developing the frontend components of our Lab Reservation System. 
 ## Phase 2: Backend Development
 In Phase 2, this involves developing the backend using Node.js with Express.js and MongoDB with Mongoose for the database.
-## Phase 3
+## Phase 3: Deployment Phase
+In Phase 3, this focuses on deploying the web application.
 
+## Authors
+- Nicole Ashley Corpuz
+- Neil Laurence Flores
+- Justin Nicolai Lee
+- Herise Janah Visto
