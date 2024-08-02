@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "6690129aaa87ab14b0216172"
+  },
+  "firstName": "Nicole",
+  "lastName": "Corpuz",
+  "middleName": "Ashley",
+  "email": "nicole_corpuz@dlsu.edu.ph",
+  "password": "$2b$10$4vsYhMJGhjDEuW1Xy48EY./6AoAD5un3S8QuTKcaIsnpUAl9wFieW",
+  "__v": 0,
+  "userID": 12234578,
+  "role": "Student"
+},
+{
+  "_id": {
+    "$oid": "669c859a04a7487e891c6f85"
+  },
+  "firstName": "Herise",
+  "lastName": "Visto",
+  "middleName": "Fernandez",
+  "email": "herise_visto@dlsu.edu.ph",
+  "password": "$2b$10$I2t.p3qmEHkZ9RoWubAqVuvQN1NmBTph2XoKtrR6iw3ya8VsJOYRG",
+  "role": "Student",
+  "userID": 12271879,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669ce2b669c8f934ffbd5957"
+  },
+  "firstName": "Olivia",
+  "lastName": "Rodrigo",
+  "middleName": "Isabel",
+  "email": "olivia@dlsu.edu.ph",
+  "password": "$2b$10$.rVtRfw65sY/W.KuGvBrWOfrMfUeilERDp25AvVGlN9gb7dAp4CKy",
+  "role": "Student",
+  "userID": 12273728,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669d10ba61419e82c35b17cc"
+  },
+  "firstName": "Billie",
+  "lastName": "Eilish",
+  "middleName": "Eilish",
+  "email": "billie_eilish@dlsu.edu.ph",
+  "password": "$2b$10$oOrC2JVZO/zdwtnR3SNsQu6EL9OLSuVF3u5zfUX3yyxgQ.gVrMx2e",
+  "role": "Labtech",
+  "userID": 2100,
+  "__v": 0
+}]

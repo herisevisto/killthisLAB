@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "669c859b04a7487e891c6f87"
+  },
+  "userID": 12271879,
+  "userDescription": "BSIT student :)",
+  "userPicture": "",
+  "reservationID": [
+    30001,
+    30007,
+    30010
+  ],
+  "__v": 18,
+  "classID": [
+    10101,
+    10103,
+    10105
+  ],
+  "displayName": "Ning",
+  "profileName": "dog.jpg"
+},
+{
+  "_id": {
+    "$oid": "669cb869e841c5e8762ecd28"
+  },
+  "userID": 12234578,
+  "userDescription": "Ganda lang",
+  "userPicture": "",
+  "reservationID": [],
+  "__v": 8,
+  "classID": [],
+  "displayName": "Nicole",
+  "profileName": "bunny.jpg"
+},
+{
+  "_id": {
+    "$oid": "669ce2b669c8f934ffbd5959"
+  },
+  "userID": 12273728,
+  "userDescription": "",
+  "userPicture": "",
+  "classID": [],
+  "reservationID": [],
+  "displayName": "",
+  "__v": 1,
+  "profileName": "dog.jpg"
+},
+{
+  "_id": {
+    "$oid": "669d10ba61419e82c35b17ce"
+  },
+  "userID": 2100,
+  "userDescription": "",
+  "userPicture": "",
+  "classID": [],
+  "reservationID": [],
+  "displayName": "",
+  "__v": 0,
+  "profileName": ""
+}]

@@ -1,0 +1,105 @@
+<html>
+    <header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Booking</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/admin.css">
+    <link rel="stylesheet" href="../styles/space-booking.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="/script/space-booking"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script><script>
+        $(document).ready(function(){
+            const urlParams = new URLSearchParams(window.location.search);
+            const userIDs = {{{json userIDs}}}
+            const classID = parseInt(urlParams.get('classID'));
+
+            if (userIDs.length > 0 && classID){
+                const userIDsString = userIDs.join(',');
+                $('form').attr('action', `/admin/receipt?userIDs=${encodeURIComponent(userIDsString)}&classID=${classID}`);
+                $('input[name="userIDs"]').val(userIDsString);
+            }
+
+        }); 
+        
+    </script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <p><h1>Hello LAB Again!</h1></p>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class ="container">
+                            <div class="container-body">
+                               <div class="details">
+                                    <div class="field">
+                                        <div class="sub-field">      
+                                            <p>Building: <span id="bldg">{{classData.bldg}}</span></p>
+                                            <p>Floor: <span id="flr">{{classData.floor}}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="sub-field"> 
+                                            <p>Class: <span id="className">{{classData.className}}</span></p>
+                                            <p>Section: <span id="section">{{classData.section}}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="sub-field">
+                                            <p>Date: <span id="date">{{toLocale classData.date}}</span></p>
+                                            <p>Time: <span id="time">{{classData.time}}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="legend">
+                                    <div><span class="available"></span> Available</div>
+                                    <div><span class="booked"></span> Booked</div>
+                                    <div><span class="selected"></span> Selected</div>
+                                </div>
+                                <div class="grid">
+                                    <div class="all-seats" id="allSeats">
+                                        <div class="seat-row">
+                                            <div class="seat">
+                                                <input type="checkbox" name="" id="1">
+                                                <div class="seat-status">Available</div>
+                                                <div class="seat-no">1</div>
+                                                <div class="seat-name"><a href="">name</a></div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                                const selectedClass = {{{json classData}}}
+                                                const seats = {{{seats}}}
+                                                adminGenerateSeats(selectedClass.rows, selectedClass.cols, seats)
+                                        </script>
+                                    </div>
+                                    <form action="">
+                                        <input type="hidden" name="classID" value="{{classData.classID}}">
+                                        <input type="hidden" name="seatID" id="seatID" value="">
+                                        <input type="hidden" name="userIDs" value="">
+                                        <button type="submit" class="reserve-button">Reserve</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <button onclick="window.location.href='/admin/dashboard'">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

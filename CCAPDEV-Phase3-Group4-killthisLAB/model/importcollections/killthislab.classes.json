@@ -1,0 +1,102 @@
+[{
+  "_id": {
+    "$oid": "668c195342313ecaeffbc62e"
+  },
+  "classID": 10101,
+  "bldg": "Andrew",
+  "section": "S17",
+  "className": "CCAPDEV",
+  "floor": 17,
+  "rows": 4,
+  "cols": 8,
+  "date": {
+    "$date": "2024-07-01T00:00:00.000Z"
+  },
+  "time": "09:30:00",
+  "capacity": 32
+},
+{
+  "_id": {
+    "$oid": "668c195342313ecaeffbc62f"
+  },
+  "classID": 10102,
+  "bldg": "Andrew",
+  "section": "S18",
+  "className": "ITPROG",
+  "floor": 17,
+  "rows": 4,
+  "cols": 8,
+  "date": {
+    "$date": "2024-08-01T00:00:00.000Z"
+  },
+  "time": "07:30:00",
+  "capacity": 32
+},
+{
+  "_id": {
+    "$oid": "668c195342313ecaeffbc630"
+  },
+  "classID": 10103,
+  "bldg": "Gokongwei",
+  "section": "S17",
+  "className": "CCAPDEV",
+  "floor": 3,
+  "rows": 2,
+  "cols": 10,
+  "date": {
+    "$date": "2024-08-01T00:00:00.000Z"
+  },
+  "time": "09:30:00",
+  "capacity": 20
+},
+{
+  "_id": {
+    "$oid": "668c195342313ecaeffbc633"
+  },
+  "classID": 10104,
+  "bldg": "Gokongwei",
+  "section": "S18",
+  "className": "CCAPDEV",
+  "floor": 3,
+  "rows": 2,
+  "cols": 10,
+  "date": {
+    "$date": "2024-08-02T00:00:00.000Z"
+  },
+  "time": "12:30:00",
+  "capacity": 20
+},
+{
+  "_id": {
+    "$oid": "668d154185cb69f9164eecb1"
+  },
+  "classID": 10105,
+  "bldg": "Gokongwei",
+  "section": "S19",
+  "className": "CCAPDEV",
+  "floor": 3,
+  "rows": 2,
+  "cols": 10,
+  "date": {
+    "$date": "2024-07-01T00:00:00.000Z"
+  },
+  "time": "12:30:00",
+  "capacity": 10
+},
+{
+  "_id": {
+    "$oid": "668d155985cb69f9164eecb2"
+  },
+  "classID": 10106,
+  "bldg": "Gokongwei",
+  "section": "S16",
+  "className": "CCAPDEV",
+  "floor": 3,
+  "rows": 2,
+  "cols": 10,
+  "date": {
+    "$date": "2024-08-02T00:00:00.000Z"
+  },
+  "time": "10:30:00",
+  "capacity": 10
+}]

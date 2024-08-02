@@ -1,0 +1,246 @@
+<html>
+    <header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve User</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/admin.css">
+    <!--Font Styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Text' rel='stylesheet'>
+    <!--RemixIcon-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!--Script-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+</header>
+<body>
+    <div class="page">
+        <img class="page-background" src="../images/lab.jpg" alt="Lab Background">
+        <div class="page-overlay">
+            <div class="page-container">
+                <div class="header">
+                    <p><h1>Hello LAB Again!</h1></p>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <div class="main-box">
+                            <div class="userField">
+                                <h2>Reserve for {{classData.className}} | {{classData.section}} </h2>
+                                <div class="solo">
+                                    <p class="search-field">
+                                        <span>User ID: </span>
+                                        <span><input type="text" id="userID" placeholder="Enter User ID"> <button id="searchButton">Search</button></span>
+                                    </p>
+                                    <div class="userdeets">
+                                        <div class="deets">
+                                            <div class="userdeets-item">
+                                                <span class="label">Full Name:</span>
+                                                <span class="value" id="fullName"></span>
+                                            </div>
+                                            <div class="userdeets-item">
+                                                <span class="label">Email:</span>
+                                                <span class="value" id="email"></span>
+                                            </div>
+                                            <div class="userdeets-item">
+                                                <span class="label">Classes:</span>
+                                                <span class="value" id="classes"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reserve">
+                                    <button id="soloButton">Reserve</button>
+                                </div>
+                                </div>
+                                <div class="group">
+                                    <p class="studentNo">
+                                        <span>No of Students: </span>
+                                        <span><input type="number" id="studentNos" placeholder="Enter No. of Students"  max="5" min="2"> <button id="enterButton">Enter</button></span>
+                                    </p>
+                                    <div id="multipleUserDeets">
+                                        <div id="userIDField">
+
+                                        </div>
+                                        <div id="userIDdeets">
+
+                                        </div>
+                                    </div>
+                                    <div id="search">
+                                        <button id="grpSearchButton">Search</button>
+                                    </div>
+                                    <div class="reserve">
+                                    <button id="groupButton">Reserve</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="logout">
+                                <button onclick="window.location.href='/admin/dashboard'">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const students = parseInt(urlParams.get('students'), 10);
+
+        if (students === 1) {
+                $('.solo').show();
+                $('.group').hide();
+            } else if (students === 2) {
+                $('.solo').hide();
+                $('.group').show();
+            }
+
+        $('#searchButton').click(function(){
+            const userID = $('#userID').val();
+            if(userID){
+                $.ajax({
+                    url: `/admin/getUserByID/${userID}`, // Adjust the URL to match your route
+                    method: 'GET',
+                    success: function(data) {
+                        // Populate user details
+                        $('#fullName').text(`${data.user.firstName} ${data.user.lastName}`);
+                        $('#email').text(data.user.email);
+
+                        let classDeet = '';
+                        data.classDetails.forEach(classDetail => {
+                            classDeet += `<span class="class-name">${classDetail.className}</span> - 
+                                        <span class="class-section">${classDetail.section}</span><br>`
+                        })
+                        $('#classes').html(classDeet);
+
+                        $('.userdeets').show(); // Show the user details
+                        $('#soloButton').show()
+
+                    },
+                    error: function() {
+                        alert('User not found or an error occurred');
+                    }
+                });
+            }
+            else{
+                alert('Please enter a valid User ID.');
+                return;
+            }
+        })
+
+        $('#soloButton').click(function(){
+            const userID = $('#userID').val();
+            if(userID){
+                const  classID = '{{classID}}'
+                window.location.href = `/admin/seatbooking?classID=${classID}&userIDs=${userID}`;
+            }
+            else{
+                alert('Please enter a valid User ID.');
+                return;
+            }
+        })
+        
+        $('#enterButton').click(function() {
+            let numberOfStudents = $('#studentNos').val()
+            let grpSearch = $('#grpSearchButton')
+            let userIDField = $('#userIDField')
+            userIDField.empty()
+
+            if (numberOfStudents < 2 || numberOfStudents > 5) {
+                alert('Please enter a number between 2 and 5.')
+                return;
+            }
+
+            for (let i = 0; i < numberOfStudents; i++) {
+                userIDField.append(
+                    `<p>
+                        <span>User ID: </span>
+                        <span><input type="text" class="multipleUserID" placeholder="User ${i+1}"></span>
+                    </p>`
+                );
+            }
+
+            grpSearch.show()
+        })
+
+        $('#grpSearchButton').click(function(){
+            let allFilled = true
+            let userIDs = []
+            let grpButton = $('#groupButton')
+            let grpSearch = $('#grpSearchButton')
+
+            $('.multipleUserID').each(function() {
+                if ($(this).val() === '') {
+                    allFilled = false;
+                    return false; // Break out of the loop
+                }
+                userIDs.push($(this).val());
+            });
+
+            if (!allFilled) {
+                alert('Please enter all User IDs.');
+                return;
+            }
+
+             $.ajax({
+                url: '/admin/validateUserIDs',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ userIDs: userIDs }),
+                success: function(response) {
+                    const userIDField = $('#multipleUserDeets #userIDField');
+                    const userIDdeets = $('#multipleUserDeets #userIDdeets');
+                    userIDdeets.empty();
+                    userIDField.hide();
+                    response.userDetails.forEach(user => {
+                        let userDetail = `<div class="userDetail">
+                                            <p>Full Name: <span>${user.firstName} ${user.lastName}</span></p>`;
+                        
+                        if (user.classDetails.length > 0) {
+                             userDetail += `<p>Class: `
+                            user.classDetails.forEach(classDetail => {
+                                userDetail += `<span>${classDetail.className} | Section: ${classDetail.section}</span> `;
+                            });
+                             userDetail += `</p>`
+                        } else {
+                            userDetail += `<p><span>No class details available.</span></p>`;
+                        }
+                        userDetail += `</div>`;
+                        userIDdeets.append(userDetail);
+                        $('#groupButton').show()
+                        $('#grpSearchButton').hide()
+                    });
+
+                },
+                error: function(jqXHR) {
+                    const errorMsg = jqXHR.responseJSON && jqXHR.responseJSON.error
+                        ? jqXHR.responseJSON.error
+                        : 'An error occurred while validating user IDs.';
+                    alert(errorMsg);
+                }
+            })
+        })
+        
+        $('#groupButton').click(function(){
+            let userIDs = []
+            $('.multipleUserID').each(function() {
+                const userID = $(this).val().trim();
+                if (userID) {
+                    userIDs.push(userID);
+                }
+            });
+
+            if (userIDs.length === 0) {
+                alert('Please enter at least one valid User ID.');
+                return;
+            }
+            const  classID = '{{classID}}'
+            window.location.href = `/admin/seatbooking?classID=${classID}&userIDs=${userIDs.join(',')}`;
+        })
+    });
+</script>
+</html>
